@@ -1,0 +1,58 @@
+﻿@model IEnumerable<English.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.tenNguoiDung)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.taiKhoan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ngayTao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.soDienThoai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.gmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.vaiTro)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tenNguoiDung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.taiKhoan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ngayTao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.soDienThoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.vaiTro)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.iD">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.iD">Details</a> |
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
